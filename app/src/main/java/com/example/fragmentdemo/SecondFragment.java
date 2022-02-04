@@ -3,6 +3,7 @@ package com.example.fragmentdemo;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +61,15 @@ public class SecondFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_second, container, false);
+    }
+
+    public void replaceChildFragment(View view){
+        FragmentManager fm = getChildFragmentManager();
+        fm.beginTransaction()
+                .replace(R.id.child_fragment_view, ChildFragment.class, null)
+                .setReorderingAllowed(true)
+                .addToBackStack("Child Fragment") // name can be null
+                .commit();
+
     }
 }

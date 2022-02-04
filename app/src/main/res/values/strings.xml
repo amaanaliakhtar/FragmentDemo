@@ -5,4 +5,5 @@
     <string name="change_fragment">Change</string>
     <string name="change_again">Change Again</string>
     <string name="second_fragment">Hello Second Fragment</string>
+    <string name="change_child">Child</string>
 </resources>
